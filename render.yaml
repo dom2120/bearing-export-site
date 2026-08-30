@@ -1,0 +1,42 @@
+services:
+  - type: web
+    name: bearing-export-website
+    runtime: node
+    plan: standard
+    region: oregon
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DATABASE_URL
+        fromDatabase:
+          name: bearing-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: APP_NAME
+        value: Bearing Export
+      - key: DEFAULT_LANGUAGE
+        value: en
+      - key: DEFAULT_CURRENCY
+        value: USD
+      - key: DEFAULT_EXCHANGE_RATE
+        value: 1
+    autoDeploy: yes
+
+databases:
+  - name: bearing-db
+    plan: standard
+    databaseName: bearing_db
+    user: bearing_user
+    region: oregon
+    postgresMajorVersion: "16"
+    ipAllowList: []

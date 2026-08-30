@@ -1,24 +1,29 @@
 {
-  "extends": "@lark-apaas/fullstack-presets/lib/simple/tsconfig/tsconfig.app.json",
   "compilerOptions": {
-    "baseUrl": "./",
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
     "paths": {
-      "@client/*": ["client/*"],
+      "@/*": ["client/src/*"],
+      "@client/src/*": ["client/src/*"],
       "@shared/*": ["shared/*"],
-      "@/*": ["./client/src/*"],
-      "@lark-apaas/client-toolkit/tools/*": ["node_modules/@lark-apaas/client-toolkit/lib/apis/tools/*"]
-    },
-    "incremental": true,
+      "@lark-apaas/client-toolkit/antd-table": ["client/src/compat/antd-table.tsx"]
+    }
   },
-  "include": [
-    "client/**/*",
-    "shared/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "public",
-    "source_package",
-    "client/src/api/gen"
-  ]
+  "include": ["client/src", "shared"]
 }
