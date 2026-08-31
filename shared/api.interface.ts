@@ -214,6 +214,10 @@ export interface CreateInquiryDto {
   attachmentUrl?: string;
   source?: string;
   language?: string;
+  taxRate?: number;
+  discountRate?: number;
+  depositRatio?: number;
+  exchangeRate?: number;
 }
 
 export interface InquiryListResponse {
