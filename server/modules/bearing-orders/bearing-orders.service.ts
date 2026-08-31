@@ -64,7 +64,7 @@ export class BearingOrdersService {
         discountAmount: discountAmount.toString(),
         totalAmount: totalAmount.toString(),
         currency: dto.currency ?? 'USD',
-        exchangeRate = String(dto.exchangeRate ?? 1),
+        exchangeRate: String(dto.exchangeRate ?? 1),
         paymentType: dto.paymentType ?? 'full',
         depositAmount: depositAmount.toString(),
         balanceAmount: balanceAmount.toString(),
