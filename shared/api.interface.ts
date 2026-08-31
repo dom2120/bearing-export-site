@@ -214,10 +214,6 @@ export interface CreateInquiryDto {
   attachmentUrl?: string;
   source?: string;
   language?: string;
-  taxRate?: number;
-  discountRate?: number;
-  depositRatio?: number;
-  exchangeRate?: number;
 }
 
 export interface InquiryListResponse {
@@ -284,6 +280,10 @@ export interface CreateOrderDto {
   taxAmount?: number;
   discountAmount?: number;
   notes?: string;
+  taxRate?: number;
+  discountRate?: number;
+  depositRatio?: number;
+  exchangeRate?: number;
 }
 
 export interface OrderListResponse {
@@ -341,7 +341,7 @@ export interface ExchangeRateResponse {
   base: string;
   rates: { [currency: string]: number };
   timestamp: number;
+}
 export type CaseListResponse = any;
 export type NewsListResponse = any;
 export type FeaturedResponse = any;
-}
