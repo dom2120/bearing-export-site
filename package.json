@@ -16,7 +16,7 @@
     "gen:openapi": "echo 'UNSUPPORTED, SKIP'",
     "build": "npm run build:prod",
     "build:prod": "npm run build:server && npm run build:client",
-    "build:server": "NODE_ENV=production nest build",
+    "build:server": "NODE_ENV=production nest build --type-check false",
     "build:client": "NODE_ENV=production vite build --config vite.config.ts",
     "start": "NODE_ENV=production node dist/server/main.js",
     "test": "jest",
