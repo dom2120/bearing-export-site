@@ -337,4 +337,7 @@ export interface ExchangeRateResponse {
   base: string;
   rates: { [currency: string]: number };
   timestamp: number;
+export type CaseListResponse = any;
+export type NewsListResponse = any;
+export type FeaturedResponse = any;
 }
