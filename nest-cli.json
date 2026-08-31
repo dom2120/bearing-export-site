@@ -4,7 +4,7 @@
   "sourceRoot": "server",
   "compilerOptions": {
     "deleteOutDir": false,
-    "tsConfigPath": "tsconfig.node.json",
+    "tsConfigPath": "tsconfig.server.json",
     "assets": [
       {
         "include": "capabilities/**/*.json",
