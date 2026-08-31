@@ -18,7 +18,7 @@
     "build:prod": "npm run build:server && npm run build:client",
     "build:server": "NODE_ENV=production nest build",
     "build:client": "NODE_ENV=production vite build --config vite.config.ts",
-    "start": "NODE_ENV=production node main.js",
+    "start": "NODE_ENV=production node dist/main.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:e2e": "jest --config test/e2e/jest.config.js",
